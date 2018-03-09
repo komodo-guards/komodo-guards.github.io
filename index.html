@@ -14,11 +14,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Komodo Guards - Komodo Notary Node Candidate">
-  <meta name="author" content="patchkez, Emmanux">
-  <meta name="keywords" content="komodo">
+  <meta name="description" content="Dragon Riders - Komodo Notary Node Candidates">
+  <meta name="author" content="patchkez, komodo.rocks">
+  <meta name="keywords" content="komodo, dragon riders">
   <link rel="canonical" href="/">
-  <title>{ TITLE }</title>
+  <title>{ DRAGON RIDERS }</title>
 
   <!-- Bootstrap Core CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -103,7 +103,7 @@
             
               <img src="/img/black-lab-glass.ico" alt="">
             
-            { TITLE }
+            { DRAGON RIDERS }
           </div>
         </a>
     </div>
@@ -178,7 +178,7 @@ If you want to have a static message in your intro layout, disable the dynamic-t
     <div class="col-md-10 col-md-offset-1">
       <h2 id="about-us">About us</h2>
 
-<p>We are team of two people komodo.rocks and patchkez. Because we have similar ideas how to improve Komodo platform, we decided to form a team.</p>
+<p>The team is composed by two Komodo Platform community members: <a href="https://github.com/Emmanux" target="_blank">komodo.rocks</a> and <a href="https://patchkez.github.io" target="_blank">patchkez</a>. We decided to form this team in order to improve Komodo platform by solving every existing scaling issue and adopting innovative technologies and practices from DevOps culture.</p>
 
 <!-- <a href="https://www.quora.com/GitHub/What-is-the-story-behind-GitHub%E2%80%99s-octocat-mascot" target="_blank">[via]</a>.
 # 
@@ -248,33 +248,61 @@ If you want to have a static message in your intro layout, disable the dynamic-t
     <div class="col-md-10 col-md-offset-1">
       <h2 id="what-we-will-provide-to-the-komodo-community">What we will provide to the Komodo community</h2>
 
-<p>My proposal is based around Notary nodes improvements. Currently in order to run notary node,
-physical server is needed with a lot of disk space and RAM. Standard servers allow you to scale only 
-vertically, which means adding RAM modules or disks. With increasing number of assetchains, single server might be not sufficient to handle the load.
-What about if we split the load between multiple servers? By cutting Komodo/Iguana/Bitcoin/assetchains 
-into smaller pieces (containers), we could run each piece of the puzzle ditributed accross multiple nodes.</p>
+<p>Our proposal is based on Notary Node architecture improvements. Currently in order to run a notary node, a physical server is needed, with a lot of disk space and RAM. Standard servers allow you to scale only vertically, which means adding RAM modules or disks. With the increasing number of assetchains, a single server might not be sufficient to handle the load. But, what if we split the load between multiple servers? By cutting Komodo/Iguana/Bitcoin/assetchains down into smaller pieces (containers), we could run each piece of the puzzle in a ditributed manner accross multiple nodes.</p>
 
 <h3 id="current-work">Current work</h3>
-<p>I already started with dockerizing Komodo platform. You can check my progress here:</p>
-
-<iframe src="https://ghbtns.com/github-btn.html?user=patchkez&amp;repo=kmdplatform&amp;count=false&amp;size=large" frameborder="0" scrolling="0" align="middle" width="45px" height="50px"></iframe>
+<p>We already started with dockerizing Komodo platform.</p>
 
 <ul>
-  <li>dockerize Bitcoin/Komodo/Iguana combo to make the deployment frictionless</li>
-  <li>decouple NN software from baremetal and deploy it into Openshift/Kubernetes</li>
-  <li>have central docker registry with signed images</li>
+  <li>dockerizing Bitcoin/Komodo/Iguana combo to make the deployment frictionless</li>
+  <li>decoupling of Notary Node software from baremetal and deployment onto Openshift/Kubernetes</li>
+  <li>having a central Docker registry with signed images</li>
+  <li>management scripts will need to be rewritten because they were designed to work on single machine</li>
 </ul>
+
+<p>You can check our progress here:</p>
+
+<!-- <iframe src="https://ghbtns.com/github-btn.html?user=patchkez&repo=kmdplatform&count=false&size=large" frameborder="0" scrolling="0" align="middle" width="45px" height="50px"></iframe> -->
+
+<iframe src="https://ghbtns.com/github-btn.html?user=patchkez&amp;repo=kmdplatform&amp;type=star&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="160px" height="60px"></iframe>
+<iframe src="https://ghbtns.com/github-btn.html?user=Emmanux&amp;repo=kmdplatform&amp;type=star&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="160px" height="60px"></iframe>
+
+<p>At some point, we will merge our changes into one repo.</p>
 
 <h3 id="pros-of-proposed-solution">Pros of proposed solution</h3>
 <ul>
-  <li>portability across machines - Docker containers can be build and tested locally on dev/test server and final images can be then deployed to Notary Node and started.</li>
+  <li>portability across machines - Docker containers can be built and tested locally on dev/test server and final images can be then deployed to Notary Nodes and then started.</li>
   <li>version control</li>
-  <li>sharing images - operators can build the image once and all can deploy the same to their prod servers</li>
+  <li>sharing images - operators can build an image once, share, and then everybody can deploy that same image on their own servers</li>
   <li>minimal overhead</li>
-  <li>high availability - in multi-node setup, containers can be started on another node in the cluster in case of failure</li>
-  <li>scalability - new nodes can be added to the cluster to expand the capacity</li>
+  <li>high availability - in case of failure, in a multi-node setup, containers can be started on another node of the same cluster</li>
+  <li>scalability - new nodes can be added to the cluster to expand its capacity</li>
 </ul>
 
+<!--
+My proposal is based around Notary nodes improvements. Currently in order to run notary node,
+physical server is needed with a lot of disk space and RAM. Standard servers allow you to scale only 
+vertically, which means adding RAM modules or disks. With increasing number of assetchains, single server might be not sufficient to handle the load.
+What about if we split the load between multiple servers? By cutting Komodo/Iguana/Bitcoin/assetchains 
+into smaller pieces (containers), we could run each piece of the puzzle ditributed accross multiple nodes.
+
+### Current work
+I already started with dockerizing Komodo platform. You can check my progress here:
+
+<iframe src="https://ghbtns.com/github-btn.html?user=patchkez&repo=kmdplatform&count=false&size=large" frameborder="0" scrolling="0" align="middle" width="45px" height="50px"></iframe>
+
+- dockerize Bitcoin/Komodo/Iguana combo to make the deployment frictionless
+- decouple NN software from baremetal and deploy it into Openshift/Kubernetes
+- have central docker registry with signed images
+
+### Pros of proposed solution
+- portability across machines - Docker containers can be build and tested locally on dev/test server and final images can be then deployed to Notary Node and started.
+- version control
+- sharing images - operators can build the image once and all can deploy the same to their prod servers
+- minimal overhead
+- high availability - in multi-node setup, containers can be started on another node in the cluster in case of failure
+- scalability - new nodes can be added to the cluster to expand the capacity
+-->
 <!--
 {: style="text-align: left;"}
 Github's Octocat was designed by Simon Oxley, alongside the white bird Twitter used (before they received a proper logo) as part of a usual routine of cranking out images for iStock. GitHub saw it, and wanted it, presumably under the notion that it can represent how complex code combines to create peculiar things, much like the octopuss... except the CEO of GitHub called it an octocat, and it has been the octocat since <a href="https://www.quora.com/GitHub/What-is-the-story-behind-GitHub%E2%80%99s-octocat-mascot" target="_blank">[via]</a>.
@@ -380,21 +408,33 @@ Support the repo by starring or forking it!
     <div class="col-md-10 col-md-offset-1">
       <h2 id="vote-details">Vote details</h2>
 
-<p>You can vote for us as a team via this Z address:</p>
+<p>You can vote for us by sending your VOTE2018 to this address:</p>
 
 <p><span style="color:#26c4f1">
 <strong>TBD</strong>
 <span></span></span></p>
 
-<p>Details regarding voting can be found <a href="https://goo.gl/Y4nRMY" target="_blank">here.</a></p>
+<p>Details regarding voting can be found here <link />.
+If you prefer to vote for us individually, you can do so by visiting each member’s site:</p>
 
-<p>If you prefer to vote for us individually, you can do so by visiting each member site:</p>
+<div class="row">
+  <!-- <div class="col-md-4"> -->
+  <div class="col-sm-6">
+    <p><a href="https://patchkez.github.io" target="_blank">patchkez</a></p>
+  </div>
+  <div class="col-sm-6">
+    <p><a href="https://github.com/Emmanux/kmdplatform" target="_blank">Emmanux</a></p>
+ </div>
+</div>
 
-<ul>
-  <li><a href="https://patchkez.github.io" target="_blank">patchkez</a></li>
-  <li><a href="https://github.com/Emmanux/kmdplatform" target="_blank">Emmanux</a></li>
-</ul>
+<!--
+Details regarding voting can be found <a href="https://goo.gl/Y4nRMY" target="_blank">here.</a>
 
+If you prefer to vote for us individually, you can do so by visiting each member site:
+
+- <a href="https://patchkez.github.io" target="_blank">patchkez</a>
+- <a href="https://github.com/Emmanux/kmdplatform" target="_blank">Emmanux</a>
+-->
 <!--
 Github's Octocat was designed by Simon Oxley, alongside the white bird Twitter used (before they received a proper logo) as part of a usual routine of cranking out images for iStock. GitHub saw it, and wanted it, presumably under the notion that it can represent how complex code combines to create peculiar things, much like the octopuss... except the CEO of GitHub called it an octocat, and it has been the octocat since <a href="https://www.quora.com/GitHub/What-is-the-story-behind-GitHub%E2%80%99s-octocat-mascot" target="_blank">[via]</a>.
 
@@ -438,8 +478,6 @@ Support the repo by starring or forking it!
 
 <ul class="list-inline social-buttons">
     
-    <li><a href="https://github.com/komodo-guards" target="_blank"><i class="fa fa-github fa-fw"></i></a></li>
-    
     
 </ul>
 
@@ -449,7 +487,8 @@ Support the repo by starring or forking it!
     <p><br><br></p>
 
     <div class="container text-center">
-        <p>Copyright &copy; patchkez, Emmanux 2018</p>
+        <!--  <p>Copyright &copy; patchkez, komodo.rocks 2018</p> -->
+        <p>2018</p>
         
     </div>
 </footer>
@@ -508,7 +547,7 @@ $(window).scroll(toggleNavCollapse);$(function(){$("a.page-scroll").bind("click"
 
   var myQuotes =  new Array();
   
-    myQuotes.push("Komodo Guards - Komodo Notary Node Candidate proposal");
+    myQuotes.push("Dragon Riders - Team of Komodo Notary Node Candidates");
   
 
   function shuffle(array) {
@@ -536,10 +575,10 @@ $(window).scroll(toggleNavCollapse);$(function(){$("a.page-scroll").bind("click"
 
     $(".intro-text").typed({
       strings: myQuotes,
-      typeSpeed: 10,
-      backDelay: 5000,
-      startDelay: 200,
-      loop: true,
+      typeSpeed: 0,
+      backDelay: 0,
+      startDelay: 0,
+      loop: false,
       loopCount: false,
       cursorChar: "|"
     });
