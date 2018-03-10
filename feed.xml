@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
 	<channel>
 		<title>{ DRAGON RIDERS }</title>
-		<description>Dragon Riders - Komodo Notary Node Candidates</description>
+		<description>Dragon Riders - Notary Node DevOps</description>
 		<link>https://dragon-riders.github.io</link>
 		<atom:link href="https://dragon-riders.github.io/feed.xml" rel="self" type="application/rss+xml" />
 		
